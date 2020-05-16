@@ -47,13 +47,13 @@ def main():
     dp = updater.dispatcher
 
     # Añadimos a la lista de Registro todos los comandos con su función [start - help - mayus]
-    dp.add_error_handler(CommandHandler('start', start))
-    dp.add_error_handler(CommandHandler('help', help))
-    dp.add_error_handler(CommandHandler('mayus', mayus))
+    dp.add_handler(CommandHandler('start', start))
+    dp.add_handler(CommandHandler('help', help))
+    dp.add_handler(CommandHandler('mayus', mayus))
 
     # Este comando es un Trigger que se lanza cuando no hay comandos [alreves]
-    dp.add_error_handler(CommandHandler('alreves', alreves))
-    
+    dp.add_handler(CommandHandler('alreves', alreves))
+
     # Y este espera al error
     dp.add_error_handler(error)
 
@@ -63,5 +63,4 @@ def main():
     updater.idle()
 
 
-if __name__ == '__main__':
-    main()
+main()
